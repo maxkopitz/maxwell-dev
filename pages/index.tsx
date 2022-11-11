@@ -6,7 +6,7 @@ import Projects from '../components/sections/projects'
 import Contact from '../components/sections/contact'
 import Footer from '../components/footer'
 
-export default function Home() {
+const Home : React.FC = () => {
   return (
     <div>
       <Head>
@@ -24,3 +24,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
