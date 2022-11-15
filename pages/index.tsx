@@ -20,8 +20,8 @@ const Home: React.FC = () => {
       </Head>
       <main>
         <div className="flex flex-row">
-          <div className="invisible md:visible w-16 h-screen text-white sticky top-0">
-            <div className="absolute text-center inset-x-0 bottom-52">
+          <div className="w-16 h-screen text-white sticky top-0">
+            <div className="absolute text-center inset-x-2 bottom-52">
               <h1>G</h1>
               <h1>L</h1>
               <h1>I</h1>
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
             <Projects />
             <Contact />
           </div>
-          <div className="invisible md:visible w-16 h-screen text-white sticky top-0">
+          <div className="w-16 h-screen text-white sticky top-0">
             <div className="absolute text-center inset-x-0 bottom-64 rotate-90">
               <h1>maxkopitz02@gmail.com</h1>
             </div>
