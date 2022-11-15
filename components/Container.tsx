@@ -1,13 +1,15 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import cn from 'classnames';
 
 import Footer from './footer';
+import MobileMenu from './MobileNav';
 
 type Props = {
+  title: string;
   children?: JSX.Element | JSX.Element[];
 };
 
@@ -15,10 +17,9 @@ type NavProps = {
   href: string;
   text: string;
 }
-const NavItem : React.FC<NavProps> = ({ href, text }) => {
+const NavItem: React.FC<NavProps> = ({ href, text }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
-
   return (
     <Link
       href={href}
@@ -33,32 +34,37 @@ const NavItem : React.FC<NavProps> = ({ href, text }) => {
     </Link>
   );
 }
-const Container: React.FC<Props> = ({ children }) => {
+const Container: React.FC<Props> = ({ title, children }) => {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <div>
+    <div className="bg-slate-300 dark:bg-slate-600">
       <Head>
         <title>Maxwell-Dev</title>
       </Head>
       <div className="flex flex-col justify-center px-8">
-        <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
-          <a href="#skip" className="skip-nav">
-            Skip to content
-          </a>
+        <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-opacity-60 dark:text-gray-100">
           <div className="ml-[-0.60rem]">
+            <MobileMenu />
             <NavItem href="/" text="Home" />
-            <NavItem href="/guestbook" text="Guestbook" />
             <NavItem href="/dashboard" text="Dashboard" />
-            <NavItem href="/blog" text="Blog" />
             <NavItem href="/snippets" text="Snippets" />
+            <NavItem href="/contact" text="Contact" />
           </div>
           <button
             aria-label="Toggle Dark Mode"
             type="button"
             className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
-            onClick={() =>
+            onClick={() => {
+
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+              console.log(resolvedTheme);
+            }
+
             }
           >
             {mounted && (
@@ -67,7 +73,7 @@ const Container: React.FC<Props> = ({ children }) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                className="w-5 h-5 text-gray-800 dark:text-gray-200"
+                className="w-5 h-5 text-gray-800 dark:text-black"
               >
                 {resolvedTheme === 'dark' ? (
                   <path
