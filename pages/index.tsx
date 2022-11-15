@@ -11,7 +11,7 @@ import Container from '../components/Container'
 const Home: React.FC = () => {
   return (
     <Container title="Maxwell Kopitz">
-      <div className="flex flex-row">
+      <div className="flex flex-row justify-center items-start mx-auto max-w-2xl pb-16">
         <div className="grow">
           <About />
           <Contact />

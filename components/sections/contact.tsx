@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
         </h2>
       </div>
       <div className="flex flex-col items-center mt-5">
-       <Link href="mailto:maxkopitz02@gmail.com" target="_blank" className="bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-12 rounded focus:outline-none focus:shadow-outline" type="submit">
+       <Link href="/contact" className="bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-12 rounded focus:outline-none focus:shadow-outline" type="submit">
           Say hi
         </Link>
  

@@ -95,7 +95,7 @@ const Container: React.FC<Props> = ({ title, children }) => {
           </button>
         </nav>
       </div>
-      <main>
+      <main className="flex flex-col justify-center px-8">
         {children}
         <Footer />
       </main>

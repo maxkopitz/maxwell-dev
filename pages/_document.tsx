@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta content="#ffffff" name="theme-color" />
-        <link href="/static/favicons/site.webmanifest" rel="manifest" />
+        <link href="/site.webmanifest" rel="manifest" />
       </Head>
       <body className="bg-white dark:bg-black text-white dark:text-black">
         <Main />
