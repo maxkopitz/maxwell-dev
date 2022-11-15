@@ -21,7 +21,7 @@ const Home: React.FC = () => {
       <main>
         <div className="flex flex-row">
           <div className="w-16 h-screen text-white sticky top-0">
-            <div className="absolute text-center inset-x-0 bottom-52">
+            <div className="absolute text-center inset-x-2 bottom-52">
               <h1>G</h1>
               <h1>L</h1>
               <h1>I</h1>
