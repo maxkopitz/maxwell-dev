@@ -25,11 +25,11 @@ const Footer: React.FC = () => {
       .catch(e => console.error(e));
 
   }, []);
+
   return (
     <footer className="text-center mt-12 mb-4">
       <a href="https://github.com/maxkopitz/maxwell-dev">
-        <p>Built by Maxwell Kopitz</p>
-        <p>Made with ♥️  in Ann Arbor</p>
+        <p className="text-gray-900">Built by Maxwell Kopitz</p>
         {githubInfo.stars > -1 && githubInfo.forks > -1 &&
           <div>
             <span> ⭐ {githubInfo.stars.toString()} - 🍴 {githubInfo.forks.toString()}</span>
