@@ -24,7 +24,7 @@ export default async function handler() {
       stars: 0,
       forks: 0,
       url: 'html' ,
-      description: hello
+      description: 'hello'
     }),
     {
       status: 200,
