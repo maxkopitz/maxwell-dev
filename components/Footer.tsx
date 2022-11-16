@@ -86,13 +86,13 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="text-center mb-10">
-        {data && 
+        {/*data && 
          <a href={data.url}>
           <p className="text-gray-900">Built by Maxwell Kopitz</p>
           <div>
             <span> ⭐ {data.stars.toString()} - 🍴 {data.forks.toString()}</span>
           </div>
-        </a> } 
+        </a> */} 
       </div>
     </footer>
   )
