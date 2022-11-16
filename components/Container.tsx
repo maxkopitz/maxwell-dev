@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import cn from 'classnames';
 
-import Footer from './Footer';
-import MobileMenu from './MobileNav';
+import Footer from 'components/Footer';
+import MobileMenu from 'components/MobileNav';
 
 type Props = {
   title: string;
