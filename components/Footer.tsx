@@ -1,11 +1,6 @@
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import NowPlaying from 'components/features/NowPlaying';
-
-import useSWR from 'swr';
-import fetcher from 'lib/fetcher';
-
-import { GithubRepo } from 'lib/types'
+import RepoStatus from './features/RepoStatus';
 
 
 const ExternalLink = ({ href, children }) => (
@@ -20,29 +15,7 @@ const ExternalLink = ({ href, children }) => (
 );
 
 const Footer: React.FC = () => {
-  const { data } = useSWR<GithubRepo>('/api/github', fetcher);
 
-  /*
-   * TODO: Move into own component
-   */
-  // useEffect(() => {
-  //   fetch('https://api.github.com/repos/maxkopitz/maxwell-dev')
-  //     .then(response => response.json())
-  //     .then(json => {
-  //       const { stargazers_count, forks_count, html_url, description } = json;
-  //       setGitHubInfo(() => {
-  //         return {
-  //           stars: stargazers_count,
-  //           forks: forks_count,
-  //           url: html_url,
-  //           description: description,
-  //         }
-  //       });
-  //     })
-  //     .catch(e => console.error(e));
-  //
-  // }, []);
-  //
   return (
     <footer>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8">
@@ -85,15 +58,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="text-center mb-10">
-        {/*data && 
-         <a href={data.url}>
-          <p className="text-gray-900">Built by Maxwell Kopitz</p>
-          <div>
-            <span> ⭐ {data.stars.toString()} - 🍴 {data.forks.toString()}</span>
-          </div>
-        </a> */} 
-      </div>
+      <RepoStatus />
     </footer>
   )
 };

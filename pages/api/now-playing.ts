@@ -6,9 +6,9 @@ export const config = {
 };
 
 export default async function handler(req: NextRequest) {
+  console.log('tesjt')
   const response = await getNowPlaying();
-  console.log('test')
-  console.log(response);
+
   if (response.status === 204 || response.status > 400) {
     return new Response(JSON.stringify({ isPlaying: false }), {
       status: 200,
