@@ -42,7 +42,7 @@ const Container: React.FC<Props> = ({ title, children }) => {
   }, []);
 
   return (
-    <div className="bg-slate-300 dark:bg-slate-600">
+    <div className="bg-slate-300 dark:bg-slate-900">
       <Head>
         <title>Maxwell-Dev</title>
       </Head>

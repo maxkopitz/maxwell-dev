@@ -20,5 +20,6 @@ export type GitHub = {
 export type GithubRepo = {
   stars: number;
   forks: number;
-  url: string;
+  url: string; 
+  description: string;
 }
