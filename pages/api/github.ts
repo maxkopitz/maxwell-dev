@@ -16,15 +16,10 @@ export default async function handler() {
 
   return new Response(
     JSON.stringify({
-      // stars: repo.stargazers_count,
-      // forks: repo.forks_count,
-      // url: repo.html_url ? repo.html_url : 'hello',
-      // description: repo.description,
-      //
-      stars: 0,
-      forks: 0,
-      url: 'html' ,
-      description: 'hello'
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+      url: repo.html_url, 
+      description: repo.description,
     }),
     {
       status: 200,
