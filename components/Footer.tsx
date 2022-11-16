@@ -43,7 +43,6 @@ const Footer: React.FC = () => {
   //
   // }, []);
   //
-  return (<h1>hi</h1>)
   return (
     <footer>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8">
@@ -87,12 +86,13 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="text-center mb-10">
-        <a href={data.url}>
+        {data && 
+         <a href={data.url}>
           <p className="text-gray-900">Built by Maxwell Kopitz</p>
           <div>
             <span> ⭐ {data.stars.toString()} - 🍴 {data.forks.toString()}</span>
           </div>
-        </a>
+        </a> } 
       </div>
     </footer>
   )
