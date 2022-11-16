@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import NowPlaying from './features/NowPlaying';
 
 interface Provider {
   stars: Number;
@@ -9,6 +10,9 @@ interface Provider {
 const Footer: React.FC = () => {
   const [githubInfo, setGitHubInfo] = useState<Provider>({ stars: -1, forks: -1 });
 
+  /*
+   * TODO: Move into own component
+   */
   useEffect(() => {
     fetch('https://api.github.com/repos/maxkopitz/maxwell-dev')
       .then(response => response.json())
@@ -20,7 +24,6 @@ const Footer: React.FC = () => {
             forks: forks_count,
           }
         });
-        console.log(json);
       })
       .catch(e => console.error(e));
 
@@ -28,6 +31,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="text-center mt-12 mb-4">
+      <NowPlaying />
       <a href="https://github.com/maxkopitz/maxwell-dev">
         <p className="text-gray-900">Built by Maxwell Kopitz</p>
         {githubInfo.stars > -1 && githubInfo.forks > -1 &&
