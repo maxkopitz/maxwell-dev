@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://maxwell.dev/sitemap.xml
