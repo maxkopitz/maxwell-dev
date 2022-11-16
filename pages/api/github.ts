@@ -4,21 +4,23 @@ export const config = {
   runtime: 'experimental-edge'
 };
 
-export default async function handler(req: NextRequest) {
-  const userResponse = await fetch('https://api.github.com/users/maxkopitz/maxwell-dev');
-    console.log(userResponse);
-  const user = await userResponse.json();
-  const repositories = await userReposResponse.json();
+export default async function handler() {
+  const repoResponse = await fetch('https://api.github.com/users/maxkopitz/maxwell-dev', {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+    }
+  });
+  const repo = await repoResponse.json();
 
-  const mine = repositories.filter((repo) => !repo.fork);
-  const stars = mine.reduce((accumulator, repository) => {
-    return accumulator + repository['stargazers_count'];
-  }, 0);
 
   return new Response(
     JSON.stringify({
-      followers: user.followers,
-      stars
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+      url: repo.html_url,
+      description: repo.description,
+
     }),
     {
       status: 200,
