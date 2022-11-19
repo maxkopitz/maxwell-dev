@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { GithubRepo } from 'lib/types'
+import fetcher from 'lib/fetcher';
+import useSWR from 'swr';
 
 const RepoStatus: React.FC = () => {
+  // TODO: useSWR
   const [githubInfo, setGitHubInfo] = useState<GithubRepo>({stars: 0, forks: 0, url: '', description: ''});
   useEffect(() => {
     fetch('https://api.github.com/repos/maxkopitz/maxwell-dev')

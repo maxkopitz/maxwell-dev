@@ -23,3 +23,8 @@ export type GithubRepo = {
   url: string; 
   description: string;
 }
+
+export type NotionReadingList = {
+  name: string;
+
+}

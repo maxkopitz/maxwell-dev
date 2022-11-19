@@ -17,7 +17,7 @@ module.exports = {
       }
     ];
   }
-}
+};
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
     default-src 'self';

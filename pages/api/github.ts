@@ -12,8 +12,7 @@ export default async function handler() {
     }
   });
   const repo = await repoResponse.json();
-
-
+  // TODO: Repo not found
   return new Response(
     JSON.stringify({
       stars: repo.stargazers_count,

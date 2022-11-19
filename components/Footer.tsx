@@ -41,6 +41,10 @@ const Footer: React.FC = () => {
               LinkedIn
             </ExternalLink>
             <ExternalLink href="https://github.com/maxkopitz">GitHub</ExternalLink>
+            <ExternalLink href="https://www.linkedin.com/in/maxkopitz/">
+             Twitter 
+            </ExternalLink>
+ 
           </div>
           <div className="flex flex-col space-y-4">
             <Link
