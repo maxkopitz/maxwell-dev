@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { GithubRepo } from 'lib/types'
 import fetcher from 'lib/fetcher';
 import useSWR from 'swr';
+import { NextPage } from "next";
 
-const RepoStatus: React.FC = () => {
+const RepoStatus: NextPage = () => {
   // TODO: useSWR
   const [githubInfo, setGitHubInfo] = useState<GithubRepo>({stars: 0, forks: 0, url: '', description: ''});
   useEffect(() => {
@@ -33,6 +34,7 @@ const RepoStatus: React.FC = () => {
           <div className="hover:text-gray-500">
             <span> {githubInfo.stars.toString()} stars - {githubInfo.forks.toString()} forks</span>
           </div>
+        
         </a>
       }
     </div>

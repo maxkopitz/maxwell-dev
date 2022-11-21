@@ -4,6 +4,7 @@ import { animate } from 'motion';
 
 import fetcher from 'lib/fetcher';
 import { NowPlayingSong } from 'lib/types';
+import { NextPage } from 'next';
 
 function AnimatedBars() {
   useEffect(() => {
@@ -74,7 +75,7 @@ function AnimatedBars() {
   );
 }
 
-export default function NowPlaying() {
+const NowPlaying : NextPage = () => {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
   return (
     <div className="flex flex-row-reverse items-center sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
@@ -113,3 +114,5 @@ export default function NowPlaying() {
     </div>
   );
 }
+
+export default NowPlaying;

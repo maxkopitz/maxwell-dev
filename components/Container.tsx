@@ -7,6 +7,7 @@ import cn from 'classnames';
 
 import Footer from 'components/Footer';
 import MobileMenu from 'components/MobileNav';
+import { NextPage } from 'next';
 
 type Props = {
   title: string;
@@ -17,7 +18,8 @@ type NavProps = {
   href: string;
   text: string;
 }
-const NavItem: React.FC<NavProps> = ({ href, text }) => {
+
+const NavItem: NextPage<NavProps> = ({ href, text }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
   return (
@@ -34,7 +36,7 @@ const NavItem: React.FC<NavProps> = ({ href, text }) => {
     </Link>
   );
 }
-const Container: React.FC<Props> = ({ title, children }) => {
+const Container: NextPage<Props> = ({ title, children }) => {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -44,7 +46,7 @@ const Container: React.FC<Props> = ({ title, children }) => {
   return (
     <div className="bg-slate-300 dark:bg-slate-900">
       <Head>
-        <title>Maxwell-Dev</title>
+        <title>{ title }</title>
       </Head>
       <div className="flex flex-col justify-center px-8">
         <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-opacity-60 dark:text-gray-100">

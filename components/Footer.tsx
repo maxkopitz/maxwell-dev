@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import NowPlaying from 'components/features/NowPlaying';
 import RepoStatus from './features/RepoStatus';
-
+import { NextPage } from 'next';
 
 const ExternalLink = ({ href, children }) => (
   <a
@@ -14,7 +14,7 @@ const ExternalLink = ({ href, children }) => (
   </a>
 );
 
-const Footer: React.FC = () => {
+const Footer: NextPage = () => {
 
   return (
     <footer>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
               LinkedIn
             </ExternalLink>
             <ExternalLink href="https://github.com/maxkopitz">GitHub</ExternalLink>
-            <ExternalLink href="https://www.linkedin.com/in/maxkopitz/">
+            <ExternalLink href="https://twitter.com/maxkopitz">
              Twitter 
             </ExternalLink>
  
@@ -49,13 +49,13 @@ const Footer: React.FC = () => {
           <div className="flex flex-col space-y-4">
             <Link
               href="/snippets"
-              className="text-gray-400 hover:text-gray-600 transition"
+              className="text-gray-500 hover:text-gray-600 transition"
             >
               Snippets
             </Link>
             <Link
               href="/dashboard"
-              className="text-gray-400 hover:text-gray-600 transition"
+              className="text-gray-500 hover:text-gray-600 transition"
             >
               Dashboard
             </Link>

@@ -1,10 +1,11 @@
+import { NextPage } from "next";
 import Container from "../components/Container";
 
 /* TODO: Complete 
  * NOTE: want to redirect back to home i think
  *
  */
-const Contact = () => {
+const Contact : NextPage = () => {
   return (
     <Container title="Maxwell Kopitz - Contact">
       <div className="h-screen flex flex-row justify-center items-start mx-auto max-w-2xl pb-16">

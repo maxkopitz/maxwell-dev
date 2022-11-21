@@ -1,6 +1,7 @@
+import { NextPage } from "next";
 import Container from "../components/Container"
 
-const Dashboard: React.FC = () => {
+const Dashboard: NextPage = () => {
   return (
     <Container title="Maxwell Kopitz - Dashboard">
       <div className="container h-screen">

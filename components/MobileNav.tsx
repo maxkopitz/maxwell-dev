@@ -3,8 +3,9 @@ import Link from 'next/link';
 import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
 import styles from 'styles/mobile-nav.module.css';
+import { NextPage } from 'next';
 
-export default function MobileMenu() {
+const MobileMenu : NextPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
@@ -135,3 +136,5 @@ function CrossIcon(props: JSX.IntrinsicElements['svg']) {
     </svg>
   );
 }
+
+export default MobileMenu;
