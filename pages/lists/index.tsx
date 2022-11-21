@@ -1,12 +1,7 @@
 import Container from 'components/Container';
-import { useEffect, useState } from 'react';
-
 import { getPosts } from 'lib/notion';
 import { NextPage } from 'next';
 
-type Response = {
-  results: any[];
-}
 export async function getServerSideProps() {
   // Get the posts
   const { results } = await getPosts();
@@ -20,7 +15,7 @@ export async function getServerSideProps() {
 }
 
 interface Props {
-  posts: [any]
+  posts: any[]
 }
 
 const Lists: NextPage<Props> = ({ posts }) => {

@@ -1,2 +1,5 @@
+#Allows all crawlers
 User-agent: *
+Allow: /
+
 Sitemap: https://maxwell.dev/sitemap.xml

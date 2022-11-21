@@ -1,5 +1,4 @@
 import {Client} from '@notionhq/client';
-import { NotionReadingList } from './types';
 const notion = new Client({
   auth: process.env.NOTION_SECRET,
 });
@@ -7,7 +6,6 @@ const notion = new Client({
 export async function getPosts() {
   const response = await notion.databases.query({
     database_id: 'c0dedacf53ca41abbc1c37150c42fe63',
-  });
-
+  }, );
   return response;
 }
