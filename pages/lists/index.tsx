@@ -17,7 +17,7 @@ export async function getServerSideProps() {
 
     }
   }
-};
+}
 
 interface Props {
   posts: [any]
