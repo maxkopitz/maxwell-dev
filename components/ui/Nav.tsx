@@ -43,7 +43,7 @@ const Nav: NextPage = () => {
         <NavItem href="/" text="Home" />
         <NavItem href="/dashboard" text="Dashboard" />
         <NavItem href="/snippets" text="Snippets" />
-        <NavItem href="/contact" text="Contact" />
+        <NavItem href="/lists" text="Lists" />
       </div>
       <button
         aria-label="Toggle Dark Mode"
