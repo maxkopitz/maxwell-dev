@@ -1,15 +1,15 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '🏗️👷 Styling, testing and'
+echo '🏗️👷 testing.'
 
 # Check Prettier standards
-npm run check-format ||
-(
-    echo '🤢🤮🤢🤮 Check-format failed 🤢🤮🤢🤮
-            Prettier Check Failed. Run npm run format, add changes and try commit again.';
-    false;
-)
+#npm run check-format ||
+#(
+#    echo '🤢🤮🤢🤮 Check-format failed 🤢🤮🤢🤮
+#            Prettier Check Failed. Run npm run format, add changes and try commit again.';
+#    false;
+#)
 
 # Check ESLint Standards
 npm run check-lint ||
@@ -27,8 +27,5 @@ npm run check-types ||
 )
 
 # If everything passes... Now we can commit
-echo '🤔🤔🤔🤔... Alright... Code looks good to me... Trying to build now. 🤔🤔🤔🤔'
-
-# If everything passes... Now we can commit
-echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
+echo 'I am committing this now. ✅'
 
