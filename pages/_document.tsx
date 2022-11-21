@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link href="/site.webmanifest" rel="manifest" />
         <meta content="#ffffff" name="theme-color" />
-        <meta name="google-site-verification" content="Gu06v3QxgyAEa-Of4Y4h8mWzgCoTZTYWv1tZDuPofP4" />
+        <meta name="google-site-verification" content="Uhww2QKuJ3OlDB1UcASC8NenarmXlZnVxiFIWR2B3pE" />
       </Head>
       <body className="bg-white dark:bg-black text-white dark:text-black">
         <Main />
