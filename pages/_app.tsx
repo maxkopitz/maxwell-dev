@@ -12,24 +12,16 @@ export default function App({ Component, pageProps }: AppProps) {
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-        `}
-      </Script>
-      {/*<Script id="google-analytics-script" strategy="lazyOnload">
+      <Script id="google-analytics-script" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           page_path: window.location.pathname,
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
           });
     `}
-      </Script> */}
+      </Script>
       <Component {...pageProps} />
       <Analytics />
     </ThemeProvider>
