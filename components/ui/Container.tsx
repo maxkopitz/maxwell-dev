@@ -2,7 +2,7 @@ import Head from "next/head";
 import Footer from "components/Footer";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import Nav from "./Nav";
+import Nav from "components/ui/Nav";
 
 type Props = {
   title: string;
