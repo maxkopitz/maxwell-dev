@@ -1,8 +1,6 @@
-import Head from 'next/head'
-
-import About from '../components/sections/about'
-import Contact from '../components/sections/contact'
-import Container from '../components/Container'
+import About from 'components/sections/about'
+import Contact from 'components/sections/contact'
+import Container from 'components/ui/Container'
 import { NextPage } from 'next'
 
 /* NOTE: About and sidebars inspired from https://brittanychiang.com/

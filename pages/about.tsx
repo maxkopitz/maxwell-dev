@@ -1,4 +1,4 @@
-import Container from "components/Container";
+import Container from "components/ui/Container";
 import { NextPage } from "next";
 
 const About : NextPage = () => {

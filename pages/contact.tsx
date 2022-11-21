@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Container from "../components/Container";
+import Container from "components/ui/Container";
 
 /* TODO: Complete 
  * NOTE: want to redirect back to home i think

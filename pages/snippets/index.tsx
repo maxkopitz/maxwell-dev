@@ -1,6 +1,7 @@
-import Container from 'components/Container';
+import Container from 'components/ui/Container';
+import { NextPage } from 'next';
 
-const Snippet: React.FC = () => {
+const Snippet: NextPage = () => {
   return (
     <Container title="Maxwell Kopitz - Snippets">
 

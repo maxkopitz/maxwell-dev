@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import Container from '../components/Container';
+import Container from 'components/ui/Container';
+import { NextPage } from 'next';
 
-const NotFound = () => {
+const NotFound : NextPage = () => {
   return (
     <Container title="404 - Maxwell Kopitz">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
