@@ -1,7 +1,7 @@
-import About from 'components/sections/about'
-import Contact from 'components/sections/contact'
-import Container from 'components/ui/Container'
-import { NextPage } from 'next'
+import About from "components/sections/about";
+import Contact from "components/sections/contact";
+import Container from "components/ui/Container";
+import { NextPage } from "next";
 
 /* NOTE: About and sidebars inspired from https://brittanychiang.com/
  * TODO: When complete give credit in README.md
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         </div>
       </div>
     </Container>
-  )
-}
+  );
+};
 
 export default Home;

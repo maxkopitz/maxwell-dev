@@ -1,17 +1,16 @@
 import { NextPage } from "next";
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import cn from 'classnames';
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import cn from "classnames";
 
-
-import MobileMenu from 'components/ui/MobileNav';
+import MobileMenu from "components/ui/MobileNav";
 
 type NavProps = {
   href: string;
   text: string;
-}
+};
 
 const NavItem: NextPage<NavProps> = ({ href, text }) => {
   const router = useRouter();
@@ -21,23 +20,21 @@ const NavItem: NextPage<NavProps> = ({ href, text }) => {
       href={href}
       className={cn(
         isActive
-          ? 'font-semibold text-gray-800 dark:text-gray-200'
-          : 'font-normal text-gray-600 dark:text-gray-400',
-        'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
+          ? "font-semibold text-gray-800 dark:text-gray-200"
+          : "font-normal text-gray-600 dark:text-gray-400",
+        "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
       )}
     >
       <span className="capsize">{text}</span>
     </Link>
   );
-}
+};
 const Nav: NextPage = () => {
-
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
   }, []);
-
 
   return (
     <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-opacity-60 dark:text-gray-100">
@@ -53,12 +50,9 @@ const Nav: NextPage = () => {
         type="button"
         className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
         onClick={() => {
-
-          setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+          setTheme(resolvedTheme === "dark" ? "light" : "dark");
           console.log(resolvedTheme);
-        }
-
-        }
+        }}
       >
         {mounted && (
           <svg
@@ -68,7 +62,7 @@ const Nav: NextPage = () => {
             stroke="currentColor"
             className="w-5 h-5 text-gray-800 dark:text-black"
           >
-            {resolvedTheme === 'dark' ? (
+            {resolvedTheme === "dark" ? (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -87,7 +81,7 @@ const Nav: NextPage = () => {
         )}
       </button>
     </nav>
-  )
+  );
 };
 
-export default Nav
+export default Nav;

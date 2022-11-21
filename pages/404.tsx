@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import Container from 'components/ui/Container';
-import { NextPage } from 'next';
+import Link from "next/link";
+import Container from "components/ui/Container";
+import { NextPage } from "next";
 
-const NotFound : NextPage = () => {
+const NotFound: NextPage = () => {
   return (
     <Container title="404 - Maxwell Kopitz">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl mb-4 text-black dark:text-white">
-          404 – Unavailable 
+          404 – Unavailable
         </h1>
         <Link
           href="/"
@@ -17,7 +17,7 @@ const NotFound : NextPage = () => {
         </Link>
       </div>
     </Container>
-  )
-}
+  );
+};
 
 export default NotFound;

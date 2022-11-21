@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import NowPlaying from 'components/features/NowPlaying';
-import RepoStatus from './features/RepoStatus';
-import { NextPage } from 'next';
+import Link from "next/link";
+import NowPlaying from "components/features/NowPlaying";
+import RepoStatus from "./features/RepoStatus";
+import { NextPage } from "next";
 
 const ExternalLink = ({ href, children }) => (
   <a
@@ -15,7 +15,6 @@ const ExternalLink = ({ href, children }) => (
 );
 
 const Footer: NextPage = () => {
-
   return (
     <footer>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8">
@@ -40,11 +39,12 @@ const Footer: NextPage = () => {
             <ExternalLink href="https://www.linkedin.com/in/maxkopitz/">
               LinkedIn
             </ExternalLink>
-            <ExternalLink href="https://github.com/maxkopitz">GitHub</ExternalLink>
-            <ExternalLink href="https://twitter.com/maxkopitz">
-             Twitter 
+            <ExternalLink href="https://github.com/maxkopitz">
+              GitHub
             </ExternalLink>
- 
+            <ExternalLink href="https://twitter.com/maxkopitz">
+              Twitter
+            </ExternalLink>
           </div>
           <div className="flex flex-col space-y-4">
             <Link
@@ -64,7 +64,7 @@ const Footer: NextPage = () => {
       </div>
       <RepoStatus />
     </footer>
-  )
+  );
 };
 
 export default Footer;

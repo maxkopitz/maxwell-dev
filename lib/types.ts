@@ -1,5 +1,5 @@
 export type Song = {
-  songUrl: string; 
+  songUrl: string;
   artist: string;
   title: string;
 };
@@ -20,11 +20,10 @@ export type GitHub = {
 export type GithubRepo = {
   stars: number;
   forks: number;
-  url: string; 
+  url: string;
   description: string;
-}
+};
 
 export type NotionReadingList = {
   name: string;
-
-}
+};

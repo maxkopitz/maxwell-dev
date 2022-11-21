@@ -8,29 +8,22 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
                 </url>
             `;
           })
-          .join('')}
+          .join("")}
     </urlset>
 `;
 export async function getServerSideProps({ res }) {
-  const allPages = [
-      '',
-      'about',
-      'dashboard',
-      'snippets',
-      'lists',
-      'contact',
-  ];
+  const allPages = ["", "about", "dashboard", "snippets", "lists", "contact"];
 
-  res.setHeader('Content-Type', 'text/xml');
+  res.setHeader("Content-Type", "text/xml");
   res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=1200, stale-while-revalidate=600'
+    "Cache-Control",
+    "public, s-maxage=1200, stale-while-revalidate=600"
   );
   res.write(createSitemap(allPages));
   res.end();
 
   return {
-    props: {}
+    props: {},
   };
 }
 

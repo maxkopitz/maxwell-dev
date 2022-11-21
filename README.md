@@ -8,20 +8,24 @@
 ## 🧰 Installation & Set up
 
 1. To use the correct verison of Node [NVM](https://github.com/nvm-sh/nvm)
+
 ```sh
-nvm install 
+nvm install
 ```
 
-2. Install dependencies 
+2. Install dependencies
+
 ```sh
 npm install
 ```
 
 3. Start dev server
+
 ```sh
 npm run dev
 ```
 
 ## 🎨 Color Reference
-| Color          | Hex                                                                |
-| -------------- | ------------------------------------------------------------------ |
+
+| Color | Hex |
+| ----- | --- |

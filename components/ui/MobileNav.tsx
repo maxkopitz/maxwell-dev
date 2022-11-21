@@ -1,40 +1,40 @@
-import cn from 'classnames';
-import Link from 'next/link';
-import useDelayedRender from 'use-delayed-render';
-import { useState, useEffect } from 'react';
-import styles from 'styles/mobile-nav.module.css';
-import { NextPage } from 'next';
+import cn from "classnames";
+import Link from "next/link";
+import useDelayedRender from "use-delayed-render";
+import { useState, useEffect } from "react";
+import styles from "styles/mobile-nav.module.css";
+import { NextPage } from "next";
 
-const MobileMenu : NextPage = () => {
+const MobileMenu: NextPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
     {
       enterDelay: 20,
-      exitDelay: 300
+      exitDelay: 300,
     }
   );
 
   function toggleMenu() {
     if (isMenuOpen) {
       setIsMenuOpen(false);
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     } else {
       setIsMenuOpen(true);
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     }
   }
 
   useEffect(() => {
     return function cleanup() {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, []);
 
   return (
     <>
       <button
-        className={cn(styles.burger, 'visible md:hidden')}
+        className={cn(styles.burger, "visible md:hidden")}
         aria-label="Toggle menu"
         type="button"
         onClick={toggleMenu}
@@ -46,13 +46,13 @@ const MobileMenu : NextPage = () => {
         <ul
           className={cn(
             styles.menu,
-            'flex flex-col absolute bg-slate-300 dark:bg-slate-900',
+            "flex flex-col absolute bg-slate-300 dark:bg-slate-900",
             isMenuRendered && styles.menuRendered
           )}
         >
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '150ms' }}
+            style={{ transitionDelay: "150ms" }}
           >
             <Link href="/" className="flex w-auto pb-4">
               Home
@@ -60,35 +60,35 @@ const MobileMenu : NextPage = () => {
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '175ms' }}
+            style={{ transitionDelay: "175ms" }}
           >
             <Link href="/dashboard" className="flex w-auto pb-4">
-             Dashboard 
+              Dashboard
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '200ms' }}
+            style={{ transitionDelay: "200ms" }}
           >
             <Link href="/snippets" className="flex w-auto pb-4">
-             Snippets 
+              Snippets
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '250ms' }}
+            style={{ transitionDelay: "250ms" }}
           >
             <Link href="/contact" className="flex w-auto pb-4">
-             Contact 
+              Contact
             </Link>
           </li>
         </ul>
       )}
     </>
   );
-}
+};
 
-function MenuIcon(props: JSX.IntrinsicElements['svg']) {
+function MenuIcon(props: JSX.IntrinsicElements["svg"]) {
   return (
     <svg
       className="h-5 w-5 absolute text-gray-900 dark:text-gray-100"
@@ -116,7 +116,7 @@ function MenuIcon(props: JSX.IntrinsicElements['svg']) {
   );
 }
 
-function CrossIcon(props: JSX.IntrinsicElements['svg']) {
+function CrossIcon(props: JSX.IntrinsicElements["svg"]) {
   return (
     <svg
       className="h-5 w-5 absolute text-gray-900 dark:text-gray-100"

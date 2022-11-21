@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Container from "components/ui/Container"
+import Container from "components/ui/Container";
 
 const Dashboard: NextPage = () => {
   return (
@@ -9,6 +9,6 @@ const Dashboard: NextPage = () => {
       </div>
     </Container>
   );
-}
+};
 
 export default Dashboard;
