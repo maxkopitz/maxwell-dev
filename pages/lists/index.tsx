@@ -9,7 +9,7 @@ type Response = {
 }
 export async function getServerSideProps() {
   // Get the posts
-  let { results } = await getPosts();
+  const { results } = await getPosts();
   // Return the result
   return {
     props: {
