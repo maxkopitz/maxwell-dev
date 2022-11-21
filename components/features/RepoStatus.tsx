@@ -3,6 +3,7 @@ import { GithubRepo } from "lib/types";
 import { NextPage } from "next";
 
 const RepoStatus: NextPage = () => {
+  // TODO: Switch to swr
   const [githubInfo, setGitHubInfo] = useState<GithubRepo>({
     stars: 0,
     forks: 0,

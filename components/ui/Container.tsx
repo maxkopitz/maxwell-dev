@@ -6,6 +6,7 @@ import Nav from "components/ui/Nav";
 
 type Props = {
   title: string;
+  description: string;
   children?: JSX.Element | JSX.Element[];
 };
 

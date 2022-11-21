@@ -7,7 +7,7 @@ import Container from "components/ui/Container";
  */
 const Contact: NextPage = () => {
   return (
-    <Container title="Maxwell Kopitz - Contact">
+    <Container title="Maxwell Kopitz - Contact" description="My contact page">
       <div className="h-screen flex flex-row justify-center items-start mx-auto max-w-2xl pb-16">
         <form className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">

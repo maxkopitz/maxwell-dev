@@ -2,17 +2,7 @@ import Link from "next/link";
 import NowPlaying from "components/features/NowPlaying";
 import RepoStatus from "./features/RepoStatus";
 import { NextPage } from "next";
-
-const ExternalLink = ({ href, children }) => (
-  <a
-    className="text-gray-500 hover:text-gray-600 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
+import ExternalLink from "components/ui/ExternalLink";
 
 const Footer: NextPage = () => {
   return (
@@ -38,9 +28,8 @@ const Footer: NextPage = () => {
               href="/lists"
               className="text-gray-500 hover:text-gray-600 transition"
             >
-             Lists 
+              Lists
             </Link>
- 
           </div>
           <div className="flex flex-col space-y-4">
             <ExternalLink href="https://www.linkedin.com/in/maxkopitz/">

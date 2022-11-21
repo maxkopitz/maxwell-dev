@@ -27,3 +27,7 @@ export type GithubRepo = {
 export type NotionReadingList = {
   name: string;
 };
+
+export type TopTracks = {
+  tracks: Song[];
+};

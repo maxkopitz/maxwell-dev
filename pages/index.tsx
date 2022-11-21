@@ -9,7 +9,7 @@ import { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <Container title="Maxwell Kopitz - Home">
+    <Container title="Maxwell Kopitz - Home" description="My home page">
       <div className="flex flex-row justify-center items-start mx-auto max-w-2xl pb-16">
         <div className="grow">
           <About />
