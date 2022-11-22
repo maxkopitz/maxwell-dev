@@ -19,12 +19,17 @@ export type GitHub = {
 };
 
 export type GithubRepo = {
+  id: string;
+  name: string;
   stars: number;
   forks: number;
   url: string;
   description: string;
 };
 
+export type GithubRepoList = {
+  repositories: GithubRepo[];
+};
 export type NotionReadingItem = {
   id: string;
   data: {

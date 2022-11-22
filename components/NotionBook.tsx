@@ -7,7 +7,7 @@ const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
     case "COMPLETED":
       badge = (
         <span className="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-400 dark:text-green-800">
-          Finished 
+          Finished
         </span>
       );
       break;
@@ -31,7 +31,9 @@ const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
     <div className="bg-white dark:bg-gray-900 border mb-4 border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-72 w-full">
       <div className="">
         {badge}
-        <h1 className="text-black dark:text-white text-lg font-bold">{item.data.name}</h1>
+        <h1 className="text-black dark:text-white text-lg font-bold">
+          {item.data.name}
+        </h1>
       </div>
       <h1 className="text-black dark:text-white">
         {item.data.author} - {item.data?.start_date} to {item.data?.end_date}

@@ -20,6 +20,7 @@ const Lists: NextPage = () => {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           <ListCard header="My Reading List" link="reading" />
           <ListCard header="My Move List" link="movies" />
+          <ListCard header="My stared github repos" link="github-stared" />
         </div>
       </div>
     </Container>

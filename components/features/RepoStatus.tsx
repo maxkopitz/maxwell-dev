@@ -5,6 +5,8 @@ import { NextPage } from "next";
 const RepoStatus: NextPage = () => {
   // TODO: Switch to swr
   const [githubInfo, setGitHubInfo] = useState<GithubRepo>({
+    id: "",
+    name: "",
     stars: 0,
     forks: 0,
     url: "",
@@ -14,13 +16,22 @@ const RepoStatus: NextPage = () => {
     fetch("https://api.github.com/repos/maxkopitz/maxwell-dev")
       .then((response) => response.json())
       .then((json) => {
-        const { stargazers_count, forks_count, html_url, description } = json;
+        const {
+          stargazers_count,
+          forks_count,
+          html_url,
+          description,
+          name,
+          id,
+        } = json;
         setGitHubInfo(() => {
           return {
             stars: stargazers_count,
             forks: forks_count,
             url: html_url,
             description: description,
+            name,
+            id,
           };
         });
       })
