@@ -24,8 +24,20 @@ export type GithubRepo = {
   description: string;
 };
 
-export type NotionReadingList = {
-  name: string;
+export type NotionDatabase = {
+  scheme: string;
+  items: NotionReadingItem[];
+};
+
+export type NotionReadingItem = {
+  id: string;
+  data: {
+    name: string;
+    author: string;
+    status: string;
+    start_date: string;
+    end_date: string;
+  };
 };
 
 export type TopTracks = {

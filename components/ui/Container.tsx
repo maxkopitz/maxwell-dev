@@ -13,7 +13,7 @@ type Props = {
 const Container: NextPage<Props> = ({ title, children }) => {
   const router = useRouter();
   return (
-    <div className="bg-slate-300 dark:bg-slate-900">
+    <div className="bg-slate-300 dark:bg-slate-800">
       <Head>
         <title>{title}</title>
         <meta content="Student, developer." name="description" />
@@ -29,10 +29,8 @@ const Container: NextPage<Props> = ({ title, children }) => {
       <div className="flex flex-col justify-center px-8">
         <Nav />
       </div>
-      <main className="flex flex-col justify-center px-8">
-        {children}
-        <Footer />
-      </main>
+      <main className="flex flex-col justify-center px-8">{children}</main>
+      <Footer />
     </div>
   );
 };

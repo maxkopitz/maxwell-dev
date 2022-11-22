@@ -34,7 +34,6 @@ const RepoStatus: NextPage = () => {
           <p>Built by Maxwell Kopitz</p>
           <div className="hover:text-gray-500">
             <span>
-              {" "}
               {githubInfo.stars.toString()} stars -{" "}
               {githubInfo.forks.toString()} forks
             </span>

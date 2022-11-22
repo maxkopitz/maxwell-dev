@@ -8,7 +8,7 @@ export const config = {
 export default async function handler(req: NextRequest) {
   const response = await getPosts();
 
-  const results = response.results;
+  const results = response;
   return new Response(
     JSON.stringify({
       results,
