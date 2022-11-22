@@ -3,12 +3,20 @@ import { type NextRequest } from "next/server";
 export const config = {
   runtime: "experimental-edge",
 };
-import {  getUserRepos } from "lib/github";
+
+const github_username = process.env.GITHUB_USERNAME;
 
 export default async function handler(req: NextRequest) {
-  const userRepos = await getUserRepos(); 
+  const userResponse = await fetch(
+    `https://api.github.com/users/${github_username}`
+  );
+  const userReposResponse = await fetch(
+    `https://api.github.com/users/${github_username}/repos?per_page=100`
+  );
 
-  const mine = userRepos.filter((repo) => !repo.fork);
+  const repositories = await userReposResponse.json();
+
+  const mine = repositories.filter((repo) => !repo.fork);
   const stars = mine.reduce((accumulator, repository) => {
     return accumulator + repository["stargazers_count"];
   }, 0);

@@ -11,8 +11,6 @@ const Github: NextPage = () => {
   const stars = new Number(data?.stars);
   const forks = new Number(data?.forks);
   const link = "https://github.com/maxkopitz";
-  console.log(stars);
-  console.log(forks);
   return (
     <>
       <MetricCard
