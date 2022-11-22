@@ -15,6 +15,7 @@ export type NowPlayingSong = {
 
 export type GitHub = {
   stars: number;
+  forks: number;
 };
 
 export type GithubRepo = {

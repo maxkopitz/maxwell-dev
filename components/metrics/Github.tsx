@@ -9,9 +9,10 @@ const Github: NextPage = () => {
   const { data } = useSWR<GitHub>("/api/github-metrics", fetcher);
 
   const stars = new Number(data?.stars);
-  const follwers = new Number(data?.stars);
+  const forks = new Number(data?.forks);
   const link = "https://github.com/maxkopitz";
-
+  console.log(stars);
+  console.log(forks);
   return (
     <>
       <MetricCard
@@ -23,7 +24,7 @@ const Github: NextPage = () => {
       <MetricCard
         header="GitHub Forks"
         link={link}
-        metric={stars}
+        metric={forks}
         isCurrency={false}
       />
     </>

@@ -21,6 +21,8 @@ const Dashboard: NextPage = () => {
             show.
           </p>
         </div>
+        {/* TODO: I want to make these into tabs, top tracks, github repos, github stars
+          */}
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           <GitHub />
         </div>

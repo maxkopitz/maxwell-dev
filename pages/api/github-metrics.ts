@@ -20,10 +20,12 @@ export default async function handler(req: NextRequest) {
   const stars = mine.reduce((accumulator, repository) => {
     return accumulator + repository["stargazers_count"];
   }, 0);
-
+  const forks = mine.reduce((accumulator, repository) => {
+    return accumulator + repository["forks_count"];
+  }, 0);
   return new Response(
     JSON.stringify({
-      followers: user.followers,
+      forks,
       stars,
     }),
     {
