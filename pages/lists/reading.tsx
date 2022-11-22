@@ -21,13 +21,10 @@ const Reading: NextPage = () => {
           </p>
         </div>
         <div className="flex flex-col jusitfy-center mx-auto mb-16">
-          {data?.items ? (
-            data?.items.map((item: NotionReadingItem) => (
-              <NotionBook key={item.id} item={item} />
-            ))
-          ) : (
-            <h1>loading</h1>
-          )}
+          {data?.items && data?.items.map((item: NotionReadingItem) => (
+            <NotionBook key={item.id} item={item} />
+          ))
+          }
         </div>
       </div>
     </Container>

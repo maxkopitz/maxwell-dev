@@ -31,9 +31,9 @@ const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
     <div className="bg-white dark:bg-gray-900 border mb-4 border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-72 w-full">
       <div className="">
         {badge}
-        <h1 className="text-white text-lg font-bold">{item.data.name}</h1>
+        <h1 className="text-black dark:text-white text-lg font-bold">{item.data.name}</h1>
       </div>
-      <h1 className="text-white">
+      <h1 className="text-black dark:text-white">
         {item.data.author} - {item.data?.start_date} to {item.data?.end_date}
       </h1>
     </div>
