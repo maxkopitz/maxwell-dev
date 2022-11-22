@@ -8,10 +8,12 @@ export const config = {
 export default async function handler(req: NextRequest) {
   const response = await getPosts();
 
-  const results = response;
+  const scheme = response.scheme;
+  const items = response.items;
   return new Response(
     JSON.stringify({
-      results,
+      scheme,
+      items,
     }),
     {
       status: 200,

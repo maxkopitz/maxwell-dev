@@ -17,6 +17,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   googleapis: ^109.0.1
   husky: ^8.0.2
+  maxwell-dev: "link:"
   motion: ^10.14.3
   next: 13.0.3
   next-themes: ^0.2.1
@@ -41,6 +42,7 @@ dependencies:
   eslint: 8.27.0
   eslint-config-next: 13.0.3_rmayb2veg2btbq6mbmnyivgasy
   googleapis: 109.0.1
+  maxwell-dev: "link:"
   motion: 10.14.3
   next: 13.0.3_biqbaboplfbrettd7655fr4n2y
   next-themes: 0.2.1_ogpkrxaz2lg6nectum6dl66tn4

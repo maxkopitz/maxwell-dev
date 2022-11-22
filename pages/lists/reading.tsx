@@ -1,15 +1,12 @@
+import useSWR from "swr";
 import NotionBook from "components/NotionBook";
 import Container from "components/ui/Container";
 import fetcher from "lib/fetcher";
 import { NotionDatabase, NotionReadingItem } from "lib/types";
 import { NextPage } from "next";
-import useSWR from "swr";
 
 const Reading: NextPage = () => {
-  const { data: results } = useSWR<NotionDatabase>(
-    "/api/get-database",
-    fetcher
-  );
+  const { data } = useSWR<NotionDatabase>("/api/get-database", fetcher);
   return (
     <Container title="Maxwell - Reading List" description="Reading list">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
@@ -23,11 +20,14 @@ const Reading: NextPage = () => {
             am reading.
           </p>
         </div>
-
         <div className="flex flex-col jusitfy-center mx-auto mb-16">
-          {results?.items.map((item: NotionReadingItem) => (
-            <NotionBook key={item.id} item={item} />
-          ))}
+          {data?.items ? (
+            data?.items.map((item: NotionReadingItem) => (
+              <NotionBook key={item.id} item={item} />
+            ))
+          ) : (
+            <h1>loading</h1>
+          )}
         </div>
       </div>
     </Container>
