@@ -112,8 +112,4 @@ const MobileMenu: NextPage = () => {
   );
 };
 
-
-
-
-
 export default MobileMenu;

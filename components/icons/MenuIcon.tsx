@@ -31,4 +31,4 @@ export const MenuIcon = (props: JSX.IntrinsicElements["svg"]) => {
       />
     </svg>
   );
-}
+};
