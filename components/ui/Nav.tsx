@@ -12,6 +12,29 @@ type NavProps = {
   text: string;
 };
 
+const pages = [
+  {
+    href: "/",
+    text: "Home",
+  },
+  {
+    href: "/about",
+    text: "About",
+  },
+  {
+    href: "/projects",
+    text: "Projects",
+  },
+  {
+    href: "/dashboard",
+    text: "Dashboard",
+  },
+  {
+    href: "/lists",
+    text: "Lists",
+  }
+]
+
 const NavItem: NextPage<NavProps> = ({ href, text }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
@@ -40,10 +63,9 @@ const Nav: NextPage = () => {
     <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-opacity-60 dark:text-gray-100">
       <div className="ml-[-0.60rem]">
         <MobileMenu />
-        <NavItem href="/" text="Home" />
-        <NavItem href="/dashboard" text="Dashboard" />
-        <NavItem href="/snippets" text="Snippets" />
-        <NavItem href="/lists" text="Lists" />
+        {pages.map((page, index) => (
+          <NavItem key={index} href={page.href} text={page.text} />
+        ))}
       </div>
       <button
         aria-label="Toggle Dark Mode"
