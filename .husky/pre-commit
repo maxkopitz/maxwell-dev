@@ -20,11 +20,11 @@ npm run check-lint ||
 )
 
 # Check tsconfig standards
-npm run check-types ||
-(
-    echo '🤡😂❌🤡 Failed Type check. 🤡😂❌🤡'
-    false;
-)
+# npm run check-types ||
+# (
+#     echo '🤡😂❌🤡 Failed Type check. 🤡😂❌🤡'
+#     false;
+# )
 
 # If everything passes... Now we can commit
 echo 'I am committing this now. ✅'
