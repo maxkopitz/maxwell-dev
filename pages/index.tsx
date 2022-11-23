@@ -15,13 +15,19 @@ const Home: NextPage = () => {
             <h3 className="text-1xl text-rose-600 dark:text-rose-100">
               Hi, my name is
             </h3>
-            <h1 className="text-6xl text-bold text-cyan-800">Maxwell Kopitz.</h1>
-            <h1 className="text-6xl text-bold text-cyan-700 dark:text-cyan-300">I build things.</h1>
+            <h1 className="text-6xl text-bold text-cyan-800">
+              Maxwell Kopitz.
+            </h1>
+            <h1 className="text-6xl text-bold text-cyan-700 dark:text-cyan-300">
+              I build things.
+            </h1>
 
             <h3 className="text-2xl text-gray-800 dark:text-gray-400">
               I&apos;m currently a junior at the{" "}
-              <span className="font-bold text-yellow-300 dark:text-[#FFCB05]">University of Michigan</span> studying
-              Computer Science.
+              <span className="font-bold text-yellow-300 dark:text-[#FFCB05]">
+                University of Michigan
+              </span>{" "}
+              studying Computer Science.
             </h3>
 
             <div className="mt-24">

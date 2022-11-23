@@ -55,6 +55,12 @@ const Footer: NextPage = () => {
             >
               Dashboard
             </Link>
+            <Link
+              href="/projects"
+              className="text-gray-500 hover:text-gray-600 transition"
+            >
+              Projects
+            </Link>
           </div>
         </div>
         <div className="w-full">

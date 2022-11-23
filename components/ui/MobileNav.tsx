@@ -5,8 +5,60 @@ import { useState, useEffect } from "react";
 import styles from "styles/mobile-nav.module.css";
 import { NextPage } from "next";
 
+import { NavProps } from "lib/types";
+import { useRouter } from "next/router";
+const pages: NavProps[] = [
+  {
+    href: "/",
+    text: "Home",
+  },
+  {
+    href: "/about",
+    text: "About",
+  },
+
+  {
+    href: "/projects",
+    text: "Projects",
+  },
+  {
+    href: "/dashboard",
+    text: "Dashboard",
+  },
+  {
+    href: "/lists",
+    text: "Lists",
+  },
+  {
+    href: "/snippets",
+    text: "Snippets",
+  },
+];
+/*       className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+ */
+
+const NavItem: NextPage<NavProps> = ({ href, text }) => {
+  const router = useRouter();
+  const isActive = router.asPath === href;
+  return (
+    <li
+      className={cn(
+        isActive
+          ? "font-semibold text-gray-800 dark:text-gray-200"
+          : "font-normal text-gray-600 dark:text-gray-400",
+        "border-b border-gray-300 dark:border-gray-700 text-sm"
+      )}
+      style={{ transitionDelay: "150ms" }}
+    >
+      <Link href={href} className="flex w-auto pb-4">
+        {text}
+      </Link>
+    </li>
+  );
+};
 const MobileMenu: NextPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
     {
@@ -50,38 +102,9 @@ const MobileMenu: NextPage = () => {
             isMenuRendered && styles.menuRendered
           )}
         >
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: "150ms" }}
-          >
-            <Link href="/" className="flex w-auto pb-4">
-              Home
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: "175ms" }}
-          >
-            <Link href="/dashboard" className="flex w-auto pb-4">
-              Dashboard
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: "200ms" }}
-          >
-            <Link href="/snippets" className="flex w-auto pb-4">
-              Snippets
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: "250ms" }}
-          >
-            <Link href="/contact" className="flex w-auto pb-4">
-              Contact
-            </Link>
-          </li>
+          {pages.map((page, index) => (
+            <NavItem key={index} text={page.text} href={page.href} />
+          ))}
         </ul>
       )}
     </>

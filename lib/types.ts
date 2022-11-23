@@ -3,7 +3,10 @@ export type Song = {
   artist: string;
   title: string;
 };
-
+export type NavProps = {
+  href: string;
+  text: string;
+};
 export type NowPlayingSong = {
   album: string;
   albumImageUrl: string;

@@ -24,12 +24,13 @@ const processDatabase = (database) => {
 };
 export async function getPosts() {
   const response = await notion.databases.query({
-    database_id: "c0dedacf53ca41abbc1c37150c42fe63", sorts: [
+    database_id: "c0dedacf53ca41abbc1c37150c42fe63",
+    sorts: [
       {
         property: "Status",
-        direction: "ascending"
-      }
-    ]
+        direction: "ascending",
+      },
+    ],
   });
   return processDatabase(response);
 }

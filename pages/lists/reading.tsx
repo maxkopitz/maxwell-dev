@@ -5,6 +5,8 @@ import fetcher from "lib/fetcher";
 import { NotionDatabase, NotionReadingItem } from "lib/types";
 import { NextPage } from "next";
 
+/* TODO: Make a pagination, multiple results on different pages, sort by, search, filter
+ */
 const Reading: NextPage = () => {
   const { data } = useSWR<NotionDatabase>("/api/get-database", fetcher);
   return (
@@ -15,12 +17,12 @@ const Reading: NextPage = () => {
         </h1>
         <div className="mb-8">
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            This is my reading list, I started tracking January 2022 what I was
-            reading on Notion. I try and keep an update-to-date record of what I
-            am reading.
+            This is my reading list, I started tracking december 2021 what I was
+            reading on Notion. I try and keep an update-to-date record.
           </p>
         </div>
-        <div className="flex flex-col jusitfy-center mx-auto mb-16">
+
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           {data?.items &&
             data?.items.map((item: NotionReadingItem) => (
               <NotionBook key={item.id} item={item} />

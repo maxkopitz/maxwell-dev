@@ -4,22 +4,14 @@ import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import cn from "classnames";
+import { NavProps } from "lib/types";
 
 import MobileMenu from "components/ui/MobileNav";
-
-type NavProps = {
-  href: string;
-  text: string;
-};
 
 const pages = [
   {
     href: "/",
     text: "Home",
-  },
-  {
-    href: "/about",
-    text: "About",
   },
   {
     href: "/projects",
@@ -32,8 +24,8 @@ const pages = [
   {
     href: "/lists",
     text: "Lists",
-  }
-]
+  },
+];
 
 const NavItem: NextPage<NavProps> = ({ href, text }) => {
   const router = useRouter();

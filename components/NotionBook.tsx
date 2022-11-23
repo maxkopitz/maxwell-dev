@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import { NotionReadingItem } from "lib/types";
 
-
 /* TODO: I want to add more information
  */
 const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
@@ -17,10 +16,11 @@ const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
       const start = new Date(item.data.start_date);
       const end = new Date(item.data.end_date);
       date = {
-        timeToRead: Math.abs(end.getTime() - start.getTime()) / (1000 * 3600 * 24),
+        timeToRead:
+          Math.abs(end.getTime() - start.getTime()) / (1000 * 3600 * 24),
         start,
         end,
-      }
+      };
       break;
     case "READING":
       badge = (
@@ -45,11 +45,15 @@ const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
           {item.data.name}
         </h1>
       </div>
-      <h2 className="text-black dark:text-white">
-        {item.data.author}
-      </h2>
-      {date && (<div className="text-gray-800 dark:text-gray-400"><p>Took me {date.timeToRead} days to read</p> 
-        <p>{date.start.toDateString()} to {date.end.toDateString()}</p></div>)}
+      <h2 className="text-black dark:text-white">{item.data.author}</h2>
+      {date && (
+        <div className="text-gray-800 dark:text-gray-400">
+          <p>Took me {date.timeToRead} days to read</p>
+          <p>
+            {date.start.toDateString()} to {date.end.toDateString()}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
