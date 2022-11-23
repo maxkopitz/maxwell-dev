@@ -4,7 +4,6 @@
 <p align="center">
   The first iteration of <a href="https://maxwell.dev/" target="_blank">maxwell.dev</a> 
 </p>
-
 ## 🧰 Installation & Set up
 
 1. To use the correct verison of Node [NVM](https://github.com/nvm-sh/nvm)
@@ -25,7 +24,3 @@ npm install
 npm run dev
 ```
 
-## 🎨 Color Reference
-
-| Color | Hex |
-| ----- | --- |
