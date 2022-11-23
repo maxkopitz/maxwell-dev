@@ -34,7 +34,7 @@ const Home: NextPage = () => {
               <Link
                 href="https://maxwell-dev.s3.us-east-2.amazonaws.com/Kopitz_Maxwell_Resume.pdf"
                 target="_blank"
-                className=" transition duration-150 ease-in-out border-solid border-2 border-slate-600 dark:border-green-500 hover:shadow-2xl text-slate-400 dark:text-white text-xl font-bold invisible md:visible py-3 px-2 rounded focus:outline-none focus:shadow-outline"
+                className="transition duration-150 ease-in-out border-solid border-2 border-slate-600 dark:border-green-500 hover:shadow-2xl text-slate-400 dark:text-white text-xl font-bold invisible md:visible py-3 px-2 rounded focus:outline-none focus:shadow-outline"
               >
                 Check out my resume!
               </Link>
@@ -42,12 +42,12 @@ const Home: NextPage = () => {
           </div>
 
           <div className="h-fit mb-20 max-w-8xl w-full flex flex-col items-center mt-5">
-            <h2 className="text-4xl text-center text-gray-800 font-bold w-full">
+            <h2 className="text-4xl text-center text-gray-800 font-bold w-full mb-5">
               Whats next?
             </h2>
             <Link
               href="mailto:maxkopitz02@gmail.com"
-              className="bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-12 rounded focus:outline-none focus:shadow-outline"
+              className="transition duration-150 ease-in-out hover:shadow-2xl bg-green-500 text-white text-xl font-bold py-2 px-12 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Say hi

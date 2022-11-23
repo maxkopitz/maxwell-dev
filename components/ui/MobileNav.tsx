@@ -34,8 +34,6 @@ const pages: NavProps[] = [
     text: "Snippets",
   },
 ];
-/*       className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
- */
 
 const NavItem: NextPage<NavProps> = ({ href, text }) => {
   const router = useRouter();
