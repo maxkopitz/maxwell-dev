@@ -8,7 +8,6 @@ const processDatabase = (database) => {
   const notionDatabase = { scheme: "test", items: [] };
   database.results.forEach((result) => {
     const properties = result.properties;
-    console.log(properties);
     const row = {
       id: result.id,
       data: {
@@ -25,7 +24,12 @@ const processDatabase = (database) => {
 };
 export async function getPosts() {
   const response = await notion.databases.query({
-    database_id: "c0dedacf53ca41abbc1c37150c42fe63",
+    database_id: "c0dedacf53ca41abbc1c37150c42fe63", sorts: [
+      {
+        property: "Status",
+        direction: "ascending"
+      }
+    ]
   });
   return processDatabase(response);
 }
