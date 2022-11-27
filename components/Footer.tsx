@@ -23,12 +23,6 @@ const Footer: NextPage = () => {
           >
             About
           </Link>
-          <Link
-            href="/lists"
-            className="text-gray-500 hover:text-gray-600 transition"
-          >
-            Lists
-          </Link>
         </div>
         <div className="flex flex-col space-y-4">
           <ExternalLink href="https://www.linkedin.com/in/maxkopitz/">

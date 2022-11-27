@@ -23,10 +23,6 @@ const pages = [
     href: "/dashboard",
     text: "Dashboard",
   },
-  {
-    href: "/lists",
-    text: "Lists",
-  },
 ];
 
 const NavItem: NextPage<NavProps> = ({ href, text }) => {
