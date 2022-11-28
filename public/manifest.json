@@ -1,12 +1,12 @@
 {
   "name": "Maxwell Kopitz",
   "short_name": "maxwell.dev",
-  "description": "Developer, student.",
+  "description": "Developer, student, and builder.",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "display": "standalone",
   "dir": "ltr",
   "lang": "en-US",
   "orientation": "portrait-primary",
-  "start_url": "../../index.html"
+  "start_url": "/"
 }
