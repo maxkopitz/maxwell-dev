@@ -12,7 +12,7 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
     </urlset>
 `;
 export async function getServerSideProps({ res }) {
-  const allPages = ["", "about", "dashboard", "snippets", "lists", "contact"];
+  const allPages = ["", "about", "dashboard", "projects"];
 
   res.setHeader("Content-Type", "text/xml");
   res.setHeader(
