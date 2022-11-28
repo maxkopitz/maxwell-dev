@@ -17,7 +17,7 @@ export default function Document() {
           gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}')
     `}
         </Script>
-        <link href="/site.webmanifest" rel="manifest" />
+        <link href="/manifest.json" rel="manifest" />
         <meta content="#ffffff" name="theme-color" />
         <meta
           name="google-site-verification"
