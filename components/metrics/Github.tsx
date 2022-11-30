@@ -11,18 +11,25 @@ const Github: NextPage = () => {
   const stars = new Number(data?.stars);
   const forks = new Number(data?.forks);
   const link = "https://github.com/maxkopitz";
+
+  const metrics = [
+    {
+      name: 'Stars',
+      value: stars,
+      isCurrency: false,
+    },
+    {
+      name: 'Forks',
+      value: forks,
+      isCurrency: false,
+    }
+  ]
   return (
     <>
       <MetricCard
-        header="GitHub Stars"
+        header="GitHub Profile"
         link={link}
-        metric={stars}
-        isCurrency={false}
-      />
-      <MetricCard
-        header="GitHub Forks"
-        link={link}
-        metric={forks}
+        metrics={metrics}
         isCurrency={false}
       />
     </>
