@@ -14,8 +14,8 @@ const Container: NextPage<Props> = (props) => {
   const router = useRouter();
   const { children, ...customMeta } = props;
   const meta = {
-    title: 'Maxwell Kopitz – Developer, Student',
-    description: `Front-end developer, JavaScript enthusiast`,
+    title: 'Maxwell Kopitz – Developer, Student, SWE, Intern',
+    description: `Front-end developer, JavaScript enthusiast, Max Kopitz`,
     type: 'website',
     ...customMeta
   };
@@ -24,7 +24,7 @@ const Container: NextPage<Props> = (props) => {
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
-        <meta content="Student, developer." name="description" />
+        <meta content={meta.description} name="description" />
         <meta
           property="og:url"
           content={`https://maxwell.dev${router.asPath}`}
