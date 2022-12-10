@@ -10,21 +10,30 @@ type Props = {
   children?: JSX.Element | JSX.Element[];
 };
 
-const Container: NextPage<Props> = ({ title, children }) => {
+const Container: NextPage<Props> = (props) => {
   const router = useRouter();
+  const { children, ...customMeta } = props;
+  const meta = {
+    title: 'Maxwell Kopitz – Developer, Student',
+    description: `Front-end developer, JavaScript enthusiast`,
+    type: 'website',
+    ...customMeta
+  };
   return (
     <div className="bg-slate-300 dark:bg-slate-800">
       <Head>
-        <title>{title}</title>
-        <meta content="Student, developer." name="description" />
+        <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
+        <meta content="Student, developer." name="description" />
         <meta
           property="og:url"
           content={`https://maxwell.dev${router.asPath}`}
         />
-        <meta property="og:type" content="website" />
+        <link rel="canonical" href={`https://maxwell.dev${router.asPath}`} />
+        <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Maxwell Kopitz" />
-        <meta property="og:description" content="Student, developer." />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
       </Head>
       <div className="flex flex-col justify-center px-8">
         <Nav />
