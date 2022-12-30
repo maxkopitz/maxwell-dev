@@ -18,13 +18,13 @@ const Home: NextPage = () => {
             <h1 className="text-6xl text-bold text-cyan-800">
               Maxwell Kopitz.
             </h1>
-            <h1 className="text-6xl text-bold text-cyan-700 dark:text-cyan-300">
+            <h1 className="text-6xl text-bold text-cyan-700 mb-2 dark:text-cyan-300">
               I build things.
             </h1>
 
             <h3 className="text-2xl text-gray-800 dark:text-gray-400">
               I&apos;m currently a junior at the{" "}
-              <span className="font-bold text-yellow-300 dark:text-[#FFCB05]">
+              <span className="font-bold bg-[#00274C] text-[#FFCB05]">
                 University of Michigan
               </span>{" "}
               studying Computer Science.
