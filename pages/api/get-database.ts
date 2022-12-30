@@ -7,6 +7,7 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   const response = await getPosts();
+  console.log('hi');
 
   const scheme = response.scheme;
   const items = response.items;
