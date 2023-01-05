@@ -32,5 +32,6 @@ export async function getPosts() {
       },
     ],
   });
+  console.log(response);
   return processDatabase(response);
 }
