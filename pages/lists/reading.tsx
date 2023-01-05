@@ -1,12 +1,16 @@
 import useSWR from "swr";
 import NotionBook from "components/NotionBook";
 import Container from "components/ui/Container";
+import DropDown from "components/ui/DropDown";
 import fetcher from "lib/fetcher";
 import { NotionDatabase, NotionReadingItem } from "lib/types";
 import { NextPage } from "next";
 
 /* TODO: Make a pagination, multiple results on different pages, sort by, search, filter
- */
+ */ 
+
+const status = ["Read", "Reading", "Want to Read"];
+const yearRead = [2021, 2022, 2023];
 const Reading: NextPage = () => {
   const { data } = useSWR<NotionDatabase>("/api/get-database", fetcher);
   return (
@@ -22,6 +26,11 @@ const Reading: NextPage = () => {
           </p>
         </div>
 
+        <div className="flex mb-8">
+          Filter by:
+          <DropDown title="Year Read" menuItems={yearRead}/> 
+          <DropDown title="Status" menuItems={status}/> 
+        </div>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           {data?.items &&
             data?.items.map((item: NotionReadingItem) => (

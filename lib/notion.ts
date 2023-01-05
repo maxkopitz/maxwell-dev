@@ -5,7 +5,9 @@ const notion = new Client({
 });
 
 const processDatabase = (database) => {
-  const notionDatabase = { scheme: "reading", items: [] };
+  const notionDatabase = { scheme: "reading", items: [], stats: {
+
+  } };
   database.results.forEach((result) => {
     const properties = result.properties;
     const row = {

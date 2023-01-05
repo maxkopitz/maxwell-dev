@@ -1,18 +1,15 @@
 import { NextPage } from "next";
 import { NotionReadingItem } from "lib/types";
+import Badge from "components/ui/Badge";
 
 /* TODO: I want to add more information
  */
-const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
+const NotionBook = ({ item }) => {
   let badge;
   let date;
   switch (item.data.status) {
     case "COMPLETED":
-      badge = (
-        <span className="bg-green-800 text-green-100 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-         Read 
-        </span>
-      );
+      badge = <Badge title="Read" className="bg-green-800 text-green-100" />
       const start = new Date(item.data.start_date);
       const end = new Date(item.data.end_date);
       date = {
@@ -23,18 +20,10 @@ const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
       };
       break;
     case "READING":
-      badge = (
-        <span className="bg-red-800 text-red-100 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-          Reading
-        </span>
-      );
+      badge = <Badge title="Reading" className="bg-red-800 text-red-100" />
       break;
     case "Not Started":
-      badge = (
-        <span className="bg-blue-800 text-blue-100 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-          Want to Read
-        </span>
-      );
+      badge = <Badge title="Want to Read" className="bg-blue-800 text-blue-100" />
       break;
   }
   return (
