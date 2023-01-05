@@ -8,7 +8,7 @@ import { NextPage } from "next";
 /* TODO: Make a pagination, multiple results on different pages, sort by, search, filter
  */
 const Reading: NextPage = () => {
-  const { data } = useSWR<NotionDatabase>("/api/get-notion", fetcher);
+  const { data } = useSWR<NotionDatabase>("/api/get-database", fetcher);
   return (
     <Container title="Maxwell - Reading List" description="Reading list">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
