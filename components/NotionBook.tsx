@@ -10,7 +10,7 @@ const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
     case "COMPLETED":
       badge = (
         <span className="bg-green-800 text-green-100 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-          Finished
+         Read 
         </span>
       );
       const start = new Date(item.data.start_date);
@@ -32,7 +32,7 @@ const NotionBook: NextPage<{ item: NotionReadingItem }> = ({ item }) => {
     case "Not Started":
       badge = (
         <span className="bg-blue-800 text-blue-100 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-          Not started
+          Want to Read
         </span>
       );
       break;
