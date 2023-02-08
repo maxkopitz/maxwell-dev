@@ -17,6 +17,22 @@ module.exports = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/zoom',
+        destination: 'https://umich.zoom.us/my/maxkopitz',
+        permanent: false,
+        basePath: false
+      },
+      {
+        source: '/github',
+        destination: 'https://github.com/maxkopitz',
+        permanent: false,
+        basePath: false
+      },
+    ]
+  },
 };
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
