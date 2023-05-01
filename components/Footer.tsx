@@ -37,22 +37,10 @@ const Footer: NextPage = () => {
         </div>
         <div className="flex flex-col space-y-4">
           <Link
-            href="/snippets"
-            className="text-gray-500 hover:text-gray-600 transition"
-          >
-            Snippets
-          </Link>
-          <Link
             href="/dashboard"
             className="text-gray-500 hover:text-gray-600 transition"
           >
             Dashboard
-          </Link>
-          <Link
-            href="/projects"
-            className="text-gray-500 hover:text-gray-600 transition"
-          >
-            Projects
           </Link>
         </div>
       </div>

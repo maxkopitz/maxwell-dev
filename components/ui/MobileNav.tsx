@@ -19,18 +19,9 @@ const pages: NavProps[] = [
     href: "/about",
     text: "About",
   },
-
-  {
-    href: "/projects",
-    text: "Projects",
-  },
   {
     href: "/dashboard",
     text: "Dashboard",
-  },
-  {
-    href: "/snippets",
-    text: "Snippets",
   },
 ];
 
