@@ -17,11 +17,7 @@ const GithubStared: React.FC = () => {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           My Stared Github Repositories
         </h1>
-        {!data?.repositories && (
-          <div role="status">
-            <LoadingSpinner />
-          </div>
-        )}
+        {!data?.repositories && <LoadingSpinner />}
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           {data?.repositories.map((repo) => (
             <GithubRepo key={repo.id} repo={repo} />

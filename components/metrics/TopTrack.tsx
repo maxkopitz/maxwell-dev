@@ -12,11 +12,7 @@ const TopTracks: NextPage = () => {
 
   return (
     <>
-      {!data?.tracks && (
-        <div role="status">
-          <LoadingSpinner />
-        </div>
-      )}
+      {!data?.tracks && <LoadingSpinner />}
 
       {data?.tracks.map((track, index) => (
         <Track ranking={index + 1} key={track.songUrl} {...track} />

@@ -23,11 +23,7 @@ const Reading: NextPage = () => {
           </p>
         </div>
         {/* TODO CENTER */}
-        {!data?.items && (
-          <div role="status">
-            <LoadingSpinner />
-          </div>
-        )}
+        {!data?.items && <LoadingSpinner />}
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           {data?.items &&
             data?.items.map((item: NotionReadingItem) => (
