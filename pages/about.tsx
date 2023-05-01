@@ -68,7 +68,7 @@ const About: NextPage = () => {
           Languages and Tools I&apos;ve Worked With
         </h3>
         <div className="metric-card bg-white dark:bg-gray-900 border rounded-lg dark:border-gray-800 mb-6 p-2">
-          <ul className="grid grid-cols-2 gap-2 text-gray-900 dark:text-gray-400 mb-4">
+          <ul className="grid grid-cols-2 gap-2 text-gray-900 dark:text-gray-400">
             {skills &&
               skills.map((skill, i) => (
                 <li key={i}>
