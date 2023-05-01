@@ -2,9 +2,6 @@ import Container from "components/ui/Container";
 import { NextPage } from "next";
 
 import Link from "next/link";
-/* NOTE: About and sidebars inspired from https://brittanychiang.com/
- * TODO: When complete give credit in README.md
- */
 
 const Home: NextPage = () => {
   return (
@@ -23,7 +20,7 @@ const Home: NextPage = () => {
             </h1>
 
             <h3 className="text-2xl text-gray-800 dark:text-gray-400">
-              I&apos;m currently a junior at the{" "}
+              I&apos;m a senior at the{" "}
               <span className="font-bold bg-[#00274C] text-[#FFCB05]">
                 University of Michigan
               </span>{" "}

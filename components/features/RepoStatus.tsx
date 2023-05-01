@@ -39,7 +39,7 @@ const RepoStatus: NextPage = () => {
   }, []);
 
   return (
-    <div className="text-center text-gray-300 mb-10">
+    <div className="text-center text-gray-800 dark:text-gray-300 mb-10">
       {githubInfo && (
         <a href={githubInfo.url}>
           <p>Built by Maxwell Kopitz</p>
