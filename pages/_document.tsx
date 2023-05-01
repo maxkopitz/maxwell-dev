@@ -18,11 +18,13 @@ export default function Document() {
     `}
         </Script>
         <link href="/manifest.json" rel="manifest" />
-        <meta content="#ffffff" name="theme-color" />
         <meta
           name="google-site-verification"
           content="Uhww2QKuJ3OlDB1UcASC8NenarmXlZnVxiFIWR2B3pE"
         />
+        <meta name="theme-color" content="#1e293b" />
+        <meta name="msapplication-navbutton-color" content="#1e293b" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1e293b" />
       </Head>
       <body className="bg-slate-300 dark:bg-slate-800 text-white dark:text-black">
         <Main />
