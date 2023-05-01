@@ -5,15 +5,20 @@ import { TopTracks } from "lib/types";
 import fetcher from "lib/fetcher";
 import useSWR from "swr";
 
+import { LoadingSpinner } from "components/ui/LoadingSpinner";
+
 const TopTracks: NextPage = () => {
   const { data } = useSWR<TopTracks>("/api/top-tracks", fetcher);
-  if (!data) {
-    return null;
-  }
 
   return (
     <>
-      {data.tracks.map((track, index) => (
+      {!data?.tracks && (
+        <div role="status">
+          <LoadingSpinner />
+        </div>
+      )}
+
+      {data?.tracks.map((track, index) => (
         <Track ranking={index + 1} key={track.songUrl} {...track} />
       ))}
     </>

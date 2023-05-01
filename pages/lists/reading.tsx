@@ -4,6 +4,7 @@ import Container from "components/ui/Container";
 import fetcher from "lib/fetcher";
 import { NotionDatabase, NotionReadingItem } from "lib/types";
 import { NextPage } from "next";
+import { LoadingSpinner } from "components/ui/LoadingSpinner";
 
 /* TODO: Make a pagination, multiple results on different pages, sort by, search, filter
  */
@@ -21,7 +22,12 @@ const Reading: NextPage = () => {
             reading on Notion. I try and keep an update-to-date record.
           </p>
         </div>
-
+        {/* TODO CENTER */}
+        {!data?.items && (
+          <div role="status">
+            <LoadingSpinner />
+          </div>
+        )}
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           {data?.items &&
             data?.items.map((item: NotionReadingItem) => (
