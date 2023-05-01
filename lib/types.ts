@@ -1,7 +1,8 @@
-export type Song = {
+export type Track = {
   songUrl: string;
   artist: string;
   title: string;
+  ranking: number;
 };
 export type NavProps = {
   href: string;
@@ -50,5 +51,5 @@ export type NotionDatabase = {
 };
 
 export type TopTracks = {
-  tracks: Song[];
+  tracks: Track[];
 };
