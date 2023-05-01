@@ -20,7 +20,7 @@ const GithubStared: React.FC = () => {
           My Stared Github Repositories
         </h1>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
-          {data?.repositories.map((repo, index) => (
+          {data?.repositories.map((repo) => (
             <GithubRepo key={repo.id} repo={repo} />
           ))}
         </div>

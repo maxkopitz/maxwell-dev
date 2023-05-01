@@ -1,4 +1,4 @@
-export default function MetricCard({ header, link, metrics, isCurrency }) {
+export default function MetricCard({ header, link, metrics }) {
   return (
     <div className="metric-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-72 w-full">
       <a
@@ -26,14 +26,17 @@ export default function MetricCard({ header, link, metrics, isCurrency }) {
         </div>
       </a>
 
-      {metrics && metrics.map((metric,index) => (
-        <p key={index} className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-          {metric.value > 0 && metric.isCurrency && "$"} 
-          {metric.value > 0 ? metric.value.toLocaleString() : "-"}
-          <span className="font-normal text-lg"> {metric.name} </span>
-        </p>
-
-      ))}
+      {metrics &&
+        metrics.map((metric, index) => (
+          <p
+            key={index}
+            className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white"
+          >
+            {metric.value > 0 && metric.isCurrency && "$"}
+            {metric.value > 0 ? metric.value.toLocaleString() : "-"}
+            <span className="font-normal text-lg"> {metric.name} </span>
+          </p>
+        ))}
     </div>
-  )
+  );
 }

@@ -1,5 +1,4 @@
-import { Client, isFullDatabase } from "@notionhq/client";
-import { type } from "os";
+import { Client } from "@notionhq/client";
 const notion = new Client({
   auth: process.env.NOTION_SECRET,
 });
@@ -33,7 +32,7 @@ export async function getPosts() {
       {
         property: "Start",
         direction: "descending",
-      }
+      },
     ],
   });
   return processDatabase(response);
