@@ -14,24 +14,19 @@ const Github: NextPage = () => {
 
   const metrics = [
     {
-      name: 'Stars',
+      name: "Stars",
       value: stars,
       isCurrency: false,
     },
     {
-      name: 'Forks',
+      name: "Forks",
       value: forks,
       isCurrency: false,
-    }
-  ]
+    },
+  ];
   return (
     <>
-      <MetricCard
-        header="GitHub Profile"
-        link={link}
-        metrics={metrics}
-        isCurrency={false}
-      />
+      <MetricCard header="GitHub Profile" link={link} metrics={metrics} />
     </>
   );
 };
