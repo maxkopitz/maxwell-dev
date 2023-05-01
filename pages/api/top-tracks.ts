@@ -17,10 +17,11 @@ export default async function handler(req: NextRequest) {
   }
   const data = await response.json();
 
-  const tracks = data.items.slice(0, 10).map((track) => ({
+  const tracks = data.items.slice(0, 10).map((track, index) => ({
     artist: track.artists.map((_artist) => _artist.name).join(", "),
     songUrl: track.external_urls.spotify,
     title: track.name,
+    rank: index,
   }));
 
   return new Response(JSON.stringify({ tracks }), {

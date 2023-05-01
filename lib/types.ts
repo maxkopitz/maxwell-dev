@@ -50,6 +50,6 @@ export type NotionDatabase = {
   items: NotionReadingItem[];
 };
 
-export type TopTracks = {
+export type TopSongs = {
   tracks: Track[];
 };
