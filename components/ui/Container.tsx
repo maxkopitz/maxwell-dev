@@ -23,7 +23,6 @@ const Container: NextPage<Props> = (props) => {
   };
   const { resolvedTheme } = useTheme();
   const currentTint = resolvedTheme === "dark" ? "#1e293b" : "#cbd5e1";
-  console.log(resolvedTheme);
 
   return (
     <div className="bg-slate-300 dark:bg-slate-800">
