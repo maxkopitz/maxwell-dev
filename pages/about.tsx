@@ -64,6 +64,19 @@ const About: NextPage = () => {
         <p className="text-gray-700 dark:text-gray-300 mb-6">
           Hi! I&apos;m max. I love building.{" "}
         </p>
+
+        <h2 className="text-gray-800 dark:text-gray-400 text-l font-bold mb-2">
+          Where I&apos;ve Worked
+        </h2>
+        {experience.map((item, key) => (
+          <ExperienceCard
+            key={key}
+            company={item.company}
+            position={item.position}
+            date={item.date}
+            highlights={item.highlights}
+          />
+        ))}
         <h3 className="text-gray-900 dark:text-gray-400 text-l font-bold mb-2">
           Languages and Tools I&apos;ve Worked With
         </h3>
@@ -80,18 +93,6 @@ const About: NextPage = () => {
               ))}
           </ul>
         </div>
-        <h2 className="text-gray-800 dark:text-gray-400 text-l font-bold mb-2">
-          Where I&apos;ve Worked
-        </h2>
-        {experience.map((item, key) => (
-          <ExperienceCard
-            key={key}
-            company={item.company}
-            position={item.position}
-            date={item.date}
-            highlights={item.highlights}
-          />
-        ))}
       </div>
     </Container>
   );
