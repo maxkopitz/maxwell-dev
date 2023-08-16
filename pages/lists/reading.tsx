@@ -17,17 +17,17 @@ const Reading: NextPage = () => {
   const [filters, setFilters] = useState<string[]>([]);
 
   const handleFilterClick = (value: string) => {
-    setFilters( prevFilters => {
+    setFilters((prevFilters) => {
       if (prevFilters.includes(value)) {
         return prevFilters.filter((item) => item !== value);
       }
       return [...prevFilters, value];
     });
-  }
+  };
 
   const isFilterEnabled = (value: string) => {
     return filters.includes(value) || filters.length === 0;
-  }
+  };
 
   return (
     <Container title="Maxwell - Reading List" description="Reading list">
@@ -44,7 +44,14 @@ const Reading: NextPage = () => {
         </div>
         <div className="mb-8">
           {filterTypes.map((value, id) => {
-            return <BookBadge key={id} handleClick={() => handleFilterClick(value)} itemType={value} filterEnabled={isFilterEnabled(value)} />
+            return (
+              <BookBadge
+                key={id}
+                handleClick={() => handleFilterClick(value)}
+                itemType={value}
+                filterEnabled={isFilterEnabled(value)}
+              />
+            );
           })}
         </div>
         {/* TODO CENTER */}
@@ -53,7 +60,7 @@ const Reading: NextPage = () => {
           {data?.items &&
             data?.items.map((item: NotionReadingItem) => {
               if (filters.length === 0 || filters.includes(item.data.status)) {
-                return <NotionBook key={item.id} item={item} />
+                return <NotionBook key={item.id} item={item} />;
               }
             })}
         </div>

@@ -27,7 +27,7 @@ export default async function handler(req: NextRequest) {
   } catch (error) {
     return new Response(
       JSON.stringify({
-        error: error
+        error: error,
       }),
       {
         status: 200,

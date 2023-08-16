@@ -7,21 +7,28 @@ interface BookBadgeProps {
   disabled?: boolean;
   filterEnabled?: boolean;
 }
-const BookBadge : FunctionComponent<BookBadgeProps> = ({ itemType, handleClick = null, disabled = false, filterEnabled = true}) => {
+const BookBadge: FunctionComponent<BookBadgeProps> = ({
+  itemType,
+  handleClick = null,
+  disabled = false,
+  filterEnabled = true,
+}) => {
   const classes = classNames(
-    'text-xs font-semibold mr-2 px-2.5 py-0.5 rounded',
-    {'bg-green-800 text-green-100': itemType === 'COMPLETED' && filterEnabled},
-    {'bg-red-800 text-red-100': itemType === 'READING' && filterEnabled},
-    {'bg-blue-800 text-blue-100': itemType === 'Not Started' && filterEnabled},
-    {'bg-gray-400 text-gray-200': !filterEnabled},
-
-    
+    "text-xs font-semibold mr-2 px-2.5 py-0.5 rounded",
+    {
+      "bg-green-800 text-green-100": itemType === "COMPLETED" && filterEnabled,
+    },
+    { "bg-red-800 text-red-100": itemType === "READING" && filterEnabled },
+    {
+      "bg-blue-800 text-blue-100": itemType === "Not Started" && filterEnabled,
+    },
+    { "bg-gray-400 text-gray-200": !filterEnabled }
   );
   switch (itemType) {
     case "COMPLETED":
-       return (
+      return (
         <button onClick={handleClick} className={classes} disabled={disabled}>
-         Read 
+          Read
         </button>
       );
     case "READING":
@@ -43,7 +50,6 @@ const BookBadge : FunctionComponent<BookBadgeProps> = ({ itemType, handleClick =
         </button>
       );
   }
- 
-}
+};
 
 export default BookBadge;
