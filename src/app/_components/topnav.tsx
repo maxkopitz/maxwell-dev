@@ -11,7 +11,7 @@ const navItems = {
         name: 'blog',
     },
     '/dashboard': {
-        name: 'Dashboard',
+        name: 'dashboard',
     },
 };
 
