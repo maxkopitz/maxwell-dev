@@ -72,5 +72,13 @@
     }
     body {
       @apply bg-background text-foreground;
+      @apply bg-zinc-800;
     }
   }
+
+
+  @layer base {
+    html {
+        @apply bg-zinc-800;
+    }
+}

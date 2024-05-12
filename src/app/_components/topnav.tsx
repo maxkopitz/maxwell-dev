@@ -17,14 +17,14 @@ const navItems = {
 
 const TopNav = (): React.ReactNode => {
     return (
-        <nav className="flex w-full items-center justify-between border-b p-4 text-xl font-semibold">
+        <nav className="flex w-full items-center justify-between text-l font-regular mb-4">
             <div className="flex flex-row items-center gap-4">
                 {Object.entries(navItems).map(([path, { name }]) => {
                     return (
                         <Link
                             key={path}
                             href={path}
-                            className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
+                            className="transition-all text-white flex align-middle relative"
                         >
                             {name}
                         </Link>
