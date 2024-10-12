@@ -42,7 +42,8 @@ const config = {
       "error",
       {
         "drizzleObjectName": [
-          "db"
+          "db",
+          "ctx.db"
         ]
       }
     ],
@@ -50,7 +51,8 @@ const config = {
       "error",
       {
         "drizzleObjectName": [
-          "db"
+          "db",
+          "ctx.db"
         ]
       }
     ]
