@@ -1,10 +1,8 @@
-import { type NextRequest } from "next/server";
-
 export const config = {
   runtime: "experimental-edge",
 };
 import { getUserStaredRepos } from "lib/github";
-export default async function handler(req: NextRequest) {
+export default async function handler() {
   const startedRepositories = await getUserStaredRepos();
 
   const repoList = [];

@@ -1,6 +1,14 @@
 import { NextPage } from "next";
 
-const GithubRepo: NextPage<any> = ({ repo }) => {
+interface GithubRepoProps {
+  repo: {
+    url: string;
+    name: string;
+    description: string;
+  };
+}
+
+const GithubRepo: NextPage<GithubRepoProps> = ({ repo }) => {
   return (
     <div className="bg-white dark:bg-gray-900 border mb-4 border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-72 w-full">
       <a href={repo.url} target="_blank" rel="noopener noreferrer">

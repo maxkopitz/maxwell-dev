@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 
-export default async (req, res) => {
+const pageview = async (req, res) => {
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -32,3 +32,5 @@ export default async (req, res) => {
     return res.status(500).json({ error: err.message });
   }
 };
+
+export default pageview;
