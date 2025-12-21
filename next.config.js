@@ -3,10 +3,22 @@ module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [
-      "i.scdn.co", // Spotify Album Art
-      "pbs.twimg.com", // Twitter Profile Picture
-      "cdn.sanity.io",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.scdn.co",
+        pathname: "/image/**",
+      },
+      {
+        protocol: "https",
+        hostname: "pbs.twimg.com",
+        pathname: "/profile_images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/**",
+      },
     ],
   },
   async headers() {

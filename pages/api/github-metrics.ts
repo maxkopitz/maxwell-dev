@@ -1,11 +1,9 @@
-import { type NextRequest } from "next/server";
-
 export const config = {
   runtime: "experimental-edge",
 };
 import { getUserRepos } from "lib/github";
 
-export default async function handler(req: NextRequest) {
+export default async function handler() {
   const userRepos = await getUserRepos();
 
   const mine = userRepos.filter((repo) => !repo.fork);

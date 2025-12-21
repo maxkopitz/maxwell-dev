@@ -1,11 +1,10 @@
-import { type NextRequest } from "next/server";
 import { getPosts } from "lib/notion";
 
 export const config = {
   runtime: "experimental-edge",
 };
 
-export default async function handler(req: NextRequest) {
+export default async function handler() {
   try {
     const response = await getPosts();
 
