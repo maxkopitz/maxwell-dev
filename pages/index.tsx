@@ -12,14 +12,10 @@ const Home: NextPage = () => {
         <h1 className="text-6xl text-bold text-cyan-700 mb-2 dark:text-cyan-300">
           I build things.
         </h1>
-        <h3 className="text-2xl text-gray-800 dark:text-gray-400">
-          I&apos;m a senior at the{" "}
-          <span className="font-bold bg-[#00274C] text-[#FFCB05] p-1">
-            University of Michigan
-          </span>{" "}
-          studying Computer Science.
-        </h3>
+        <h3 className="text-2xl text-gray-800 dark:text-gray-400 p-1">
+        Sofware Engineer At J.P. Morgan Chase & Co.
 
+        </h3>
         <div className="mt-24">
           <Link
             href="https://maxwell-dev.s3.us-east-2.amazonaws.com/Kopitz_Maxwell_Resume.pdf"
