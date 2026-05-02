@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -44,11 +43,6 @@ const NavItem: NextPage<NavProps> = ({ href, text }) => {
 };
 const Nav: NextPage = () => {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-opacity-60 dark:text-gray-100">
       <div className="ml-[-0.60rem]">
@@ -65,7 +59,8 @@ const Nav: NextPage = () => {
           setTheme(resolvedTheme === "dark" ? "light" : "dark");
         }}
       >
-        {mounted && resolvedTheme === "dark" ? <SunIcon /> : <MoonIcon />}
+        <span className="block dark:hidden"><MoonIcon /></span>
+        <span className="hidden dark:block"><SunIcon /></span>
       </button>
     </nav>
   );

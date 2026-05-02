@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: [
-      "i.scdn.co", // Spotify Album Art
-      "pbs.twimg.com", // Twitter Profile Picture
-      "cdn.sanity.io",
+    remotePatterns: [
+      { protocol: "https", hostname: "i.scdn.co" }, // Spotify Album Art
+      { protocol: "https", hostname: "pbs.twimg.com" }, // Twitter Profile Picture
+      { protocol: "https", hostname: "cdn.sanity.io" },
     ],
   },
   async headers() {
