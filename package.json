@@ -10,7 +10,7 @@
     "lint": "eslint",
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
-    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "check-lint": "eslint",
     "format": "prettier --write .",
     "test-all": "pnpm run check-format && pnpm run check-lint && pnpm run check-types",
     "prepare": "husky install"
