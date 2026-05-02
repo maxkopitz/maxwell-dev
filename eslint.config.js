@@ -3,6 +3,7 @@ const tseslint = require("@typescript-eslint/eslint-plugin");
 const tsParser = require("@typescript-eslint/parser");
 
 module.exports = [
+  { ignores: [".vercel/**"] },
   ...nextConfig,
   {
     files: ["**/*.ts", "**/*.tsx"],
