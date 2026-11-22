@@ -1,4 +1,4 @@
-export const MoonIcon = (props: JSX.IntrinsicElements["svg"]) => {
+export const MoonIcon = (props: React.ComponentProps<"svg">) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
