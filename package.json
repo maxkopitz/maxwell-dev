@@ -32,12 +32,6 @@
     "react-is": "^19.3.1",
     "sharp": "^0.34.5"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp",
-      "unrs-resolver"
-    ]
-  },
   "devDependencies": {
     "autoprefixer": "^10.5.0",
     "eslint": "10.15.0",
