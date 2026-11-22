@@ -1,25 +1,10 @@
-<div align="center">
-  <h1>Maxwell.dev</h1>
-</div>
-<p align="center">
-  The first iteration of <a href="https://maxwell.dev/" target="_blank">maxwell.dev</a> 
-</p>
-## 🧰 Installation & Set up
+# maxwell.dev
 
-1. To use the correct verison of Node [NVM](https://github.com/nvm-sh/nvm)
+A one-page personal site for Maxwell Kopitz, built with Next.js and Tailwind CSS.
 
 ```sh
-nvm install
-```
-
-2. Install dependencies
-
-```sh
-npm install
-```
-
-3. Start dev server
-
-```sh
-npm run dev
+fnm install
+fnm use
+pnpm install
+pnpm dev
 ```

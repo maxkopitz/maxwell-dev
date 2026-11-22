@@ -1,57 +1,54 @@
 import Head from "next/head";
-import Footer from "components/Footer";
-import { NextPage } from "next";
 import { useRouter } from "next/router";
-import Nav from "components/ui/Nav";
-
 import { useTheme } from "next-themes";
+import { SunIcon } from "components/icons/SunIcon";
+import { MoonIcon } from "components/icons/MoonIcon";
 
 type Props = {
   title: string;
   description: string;
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
 };
 
-const Container: NextPage<Props> = (props) => {
+const Container = ({ title, description, children }: Props) => {
   const router = useRouter();
-  const { children, ...customMeta } = props;
-  const meta = {
-    title: "Maxwell Kopitz – Developer, Student, SWE, Intern",
-    description: `Front-end developer, JavaScript enthusiast, Max Kopitz`,
-    type: "website",
-    ...customMeta,
-  };
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const currentTint = resolvedTheme === "dark" ? "#1e293b" : "#cbd5e1";
+  const url = `https://maxwell.dev${router.asPath}`;
 
   return (
-    <div className="bg-slate-300 dark:bg-slate-800">
+    <div className="min-h-screen bg-slate-300 dark:bg-slate-800">
       <Head>
-        <title>{meta.title}</title>
+        <title>{title}</title>
         <meta name="robots" content="follow, index" />
-        <meta content={meta.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://maxwell.dev${router.asPath}`}
-        />
-        <link rel="canonical" href={`https://maxwell.dev${router.asPath}`} />
-        <meta property="og:type" content={meta.type} />
+        <meta name="description" content={description} />
+        <meta property="og:url" content={url} />
+        <link rel="canonical" href={url} />
+        <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Maxwell Kopitz" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta name="theme-color" content={currentTint} />
-        <meta name="msapplication-navbutton-color" content={currentTint} />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content={currentTint}
-        />
       </Head>
-      <div className="flex flex-col justify-center px-8">
-        <Nav />
-      </div>
-      <main className="flex flex-col justify-center px-8">
+      <main className="mx-auto w-full max-w-2xl px-8 py-8">
+        <div className="flex justify-end mb-12">
+          <button
+            aria-label="Toggle Dark Mode"
+            type="button"
+            className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center hover:ring-2 ring-gray-300 transition-all"
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+          >
+            <span className="block dark:hidden">
+              <MoonIcon />
+            </span>
+            <span className="hidden dark:block">
+              <SunIcon />
+            </span>
+          </button>
+        </div>
         {children}
-        <Footer />
       </main>
     </div>
   );

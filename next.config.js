@@ -1,34 +1,11 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "i.scdn.co" }, // Spotify Album Art
-      { protocol: "https", hostname: "pbs.twimg.com" }, // Twitter Profile Picture
-      { protocol: "https", hostname: "cdn.sanity.io" },
-    ],
-  },
   async headers() {
     return [
       {
         source: "/(.*)",
         headers: securityHeaders,
-      },
-    ];
-  },
-  async redirects() {
-    return [
-      {
-        source: "/zoom",
-        destination: "https://umich.zoom.us/my/maxkopitz",
-        permanent: false,
-        basePath: false,
-      },
-      {
-        source: "/github",
-        destination: "https://github.com/maxkopitz",
-        permanent: false,
-        basePath: false,
       },
     ];
   },
